@@ -1,0 +1,3 @@
+{"nom": "Matthieu", "tickets": ["1"]}
+{"nom": "TEST", "tickets": ["2", "34"]}
+{"nom": "Matthieu2", "tickets": ["1", "2", "truc", "4", "5", "200", "3241", "23", "345", "12345678", "NON"]}
