@@ -8,6 +8,8 @@ class Personnage:
         self.__defense = defense
         self.__cacthPhrase = cacthPhrase
 
+        self.sePresenter()
+
     @property
     def name(self):
         return self.__name
@@ -41,7 +43,11 @@ class Personnage:
     def cacthPhrase(self):
         return self.__cacthPhrase
 
+    def isInAttack(self):
+        pass
+
     def attaquer(self, perso):
+        self.isInAttack()
         if self.hp <= 0:
             print(f"{self.name} ne peut pas attaquer, il est mort")
             return
@@ -49,7 +55,7 @@ class Personnage:
         print(f"{self.name} attaque {perso.name}, il lui reste {perso.hp} hp !")
 
     def sePresenter(self):
-        print(f"{self.__name} : {self.cacthPhrase}")
+        print(f"{self.name} : {self.cacthPhrase}")
 
 
 class Guerrier(Personnage):
@@ -58,7 +64,10 @@ class Guerrier(Personnage):
         Personnage.__init__(self, name, 100, 100, 30, 20, "KAAAAAAAAAARMINE COOOOOOOOORP")
 
     def crieDeGuerre(self):
-        print(f"{self.__name} : {self.cacthPhrase}")
+        print(f"{self.name} : {self.cacthPhrase}")
+
+    def isInAttack(self):
+        self.crieDeGuerre()
 
 
 class Clerc(Personnage):
