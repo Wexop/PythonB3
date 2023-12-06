@@ -60,8 +60,8 @@ class Personnage:
 
 class Guerrier(Personnage):
 
-    def __init__(self, name):
-        Personnage.__init__(self, name, 100, 100, 30, 20, "KAAAAAAAAAARMINE COOOOOOOOORP")
+    def __init__(self, name, hp=100, hpmax=100, dmg=30, defense=20, catch="KAAAAAAAAAARMINE COOOOOOOOORP"):
+        super().__init__(name, hp, hpmax, dmg, defense, catch)
 
     def crieDeGuerre(self):
         print(f"{self.name} : {self.cacthPhrase}")
@@ -72,8 +72,8 @@ class Guerrier(Personnage):
 
 class Clerc(Personnage):
 
-    def __init__(self, name):
-        Personnage.__init__(self, name, 200, 200, 10, 15, "JE SUIS LE SOIGNEUR")
+    def __init__(self, name, hp=200, hpmax=200, dmg=10, defense=15, catch="JE SUIS LE SOIGNEUR"):
+        super().__init__(name, hp, hpmax, dmg, defense, catch)
         self.__heal = 30
 
     def soigner(self, perso):
@@ -86,7 +86,7 @@ class Clerc(Personnage):
 class Paladin(Clerc, Guerrier):
 
     def __init__(self, name):
-        Personnage.__init__(self, name, 250, 250, 20, 40, "DEMACIAAAA")
+        super().__init__(name, 250, 250, 20, 40, "DEMACIAAAA")
 
 
 class Mage(Personnage):
@@ -125,11 +125,12 @@ class Archer(Guerrier):
 guerrier = Guerrier("Salope")
 mage = Mage("Ziggs")
 clerc = Clerc("Soraka")
+paladin = Paladin("Michel")
 
+paladin.attaquer(guerrier)
 mage.jeterSort(guerrier)
 guerrier.attaquer(mage)
 clerc.soigner(mage)
-mage.jeterSort(guerrier)
 clerc.attaquer(guerrier)
 guerrier.attaquer(clerc)
 mage.jeterSort(guerrier)
