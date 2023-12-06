@@ -51,7 +51,7 @@ class Personnage:
         if self.hp <= 0:
             print(f"{self.name} ne peut pas attaquer, il est mort")
             return
-        perso.hp = self.__dmg - perso.defense
+        perso.hp -= self.__dmg - perso.defense
         print(f"{self.name} attaque {perso.name}, il lui reste {perso.hp} hp !")
 
     def sePresenter(self):
@@ -106,7 +106,7 @@ class Mage(Personnage):
 
     def jeterSort(self, perso):
         if self.mana - self.manaCost >= 0:
-            perso.hp -= self.dmg
+            perso.hp -= self.dmg - perso.defense
             self.hp += self.dmg
             if self.hp <= 0:
                 print(f"{self.name} ne peut pas attaquer, il est mort")
