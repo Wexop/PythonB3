@@ -104,7 +104,7 @@ class Mage(Personnage):
                 return
             print(f"{self.name} lance un sort sur {perso.name}, il lui reste {perso.hp} hp !")
         else:
-            print(f"{self.name} n'as plus de mana !")
+            print(f"{self.name} n'a plus de mana !")
 
 
 class Archer(Guerrier):
