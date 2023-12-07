@@ -1,1 +1,3 @@
 ﻿.idea
+Django/myapp/__pycache__
+Django/myapp/migrations/__pycache__
