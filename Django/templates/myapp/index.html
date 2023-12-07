@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Bienvenue sur Django {{ name }} !</h1>
+<h3>Présentation des différentes catégories d'articles</h3>
+
+<ul>
+    {% for article in list_article %}
+        <li>
+            <a href="blog/{{ article | lower }}/1">{{ article }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,10 +1,11 @@
 from django.http import *
+from django.shortcuts import render
 
 
 def index(request):
-    text = "<h1>Bienvenue sur mon application django !</h1> <p>Vous pouvez poursuivre la visite du site</p> "
+    context = {"name": 'Matt', "list_article": ["Dévelopement", "Réseau", "Jeux", "Sécurité", "Tech"]}
 
-    return HttpResponse(text)
+    return render(request, 'myapp/index.html', context=context)
 
 
 def info(request):
